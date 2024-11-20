@@ -1,0 +1,604 @@
+/* importing google fonts */
+@import url("http://www.fontstatic.com/f=bahij");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "bahij", sans-serif;
+}
+:root{
+    /* colors */
+   --gray:#eeeeee;
+    
+
+    /* fonts size  */
+    --font-size-s : 0.9rem;
+    --font-size-n : 1rem;
+    --font-size-m : 1.12rem;
+    --font-size-l : 1.5rem;
+    --font-size-xl : 2rem;
+    --font-size-xxl : 2.3rem;
+    /* Font weight */
+    --font-weight-normal : 400;
+    --font-weight-medium : 500;
+    --font-weight-semibold : 600;
+    --font-weight-bold : 700;
+    /* Border radius */
+    --border-radius-s : 8px;
+    --border-radius-m : 30px;
+    --border-radius-circle : 50% ;
+    /* Site max width */
+    --site-max-width : 1300px;
+    /* Transition */
+    
+}
+
+html{
+    scroll-behavior: smooth;
+}
+/* Style for whole website */
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+button{
+    cursor: pointer;
+    border: none ;
+    background: none;
+
+}
+img{
+    width: 100%;
+    /* i want to make the photo right  */
+    margin: 0 auto;
+    margin-left: 20px;
+    opacity: 0;
+    animation: fade-in 1s ease-in-out forwards;
+}
+@keyframes fade-in{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+} 
+    
+.section-content{
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: var(--site-max-width);
+}
+
+/* Navbar section */
+header{
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+    background:var(--gray) ;
+}
+
+header .navbar{
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .nav-logo .logo-text{
+    color:black;
+    font-size:var(--font-size-xl) ;
+    font-weight: var(--font-weight-semibold);
+}
+
+.navbar .nav-menu{
+    display: flex;
+    gap:30px ;
+}
+
+.navbar .nav-menu .nav-link{
+    padding: 10px 18px; 
+    color: black;
+    font-size: var(--font-size-m);
+    border-radius: var(--border-radius-m);
+    transition:0.3s ease ;
+}
+
+.navbar .nav-menu .nav-link:hover{
+    color:wheat;
+    background:black;
+    
+}
+.navbar :where(#menu-close-button , #menu-open-button){
+    display: none;
+}
+/* Add this CSS to your style.css file */
+
+/* Line bar at the bottom of the navigation bar */
+.navbar {
+    position: relative;
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--gray);
+  }
+  
+  .navbar::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ccc; /* Change the color as needed */
+    margin-top: 2px; /* Adjust the margin as needed */
+  }
+  
+  /* The rest of your CSS code remains the same */
+
+/* Hero Section styling */
+.hero-section{
+    min-height: 100vh;
+    background-color: var(--gray);
+}
+
+.hero-section .section-content{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    color: black;
+    justify-content:space-between;
+    direction: rtl;
+
+}
+.hero-section .section-details{
+    width: 100%;
+    text-align: right;
+    top: 100px;
+    right: 100px;
+    
+}
+.hero-section .section-details .title{
+    font-size: var(--font-size-xxl);
+    color: rgb(17, 33, 48);
+    
+}
+.hero-section .section-details .subtitle{
+    margin-top: 8px;
+    max-width: 70%;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+
+}
+
+.hero-section .section-details .description{
+    max-width: 70%;
+    margin: 24px 0 40px;
+    font-size: var(--font-size-m);
+}
+.hero-section .section-details .buttons{
+    display: flex;
+    gap: 23px;
+}
+.hero-section .section-details .button{
+    padding: 10px 26px;
+    border: 2px solid transparent;
+    color: black;
+    border-radius: var(--border-radius-m);
+    background: lightslategray;
+    font-weight: var(--font-weight-medium);
+    transition: 0.2s ease;
+}
+
+.hero-section .section-details .button:hover{
+   color: wheat;
+   border-color: black;
+   background: black;
+}  
+/* About me styling */
+.about-me-section {
+    padding: 60px 0;
+    background-color: #f5f5f5;
+}
+
+.section-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.statics-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.static {
+    width: calc(25% - 20px);
+    margin-bottom: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.static.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.static-icon {
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+}
+
+.static-details {
+    flex-grow: 1;
+}
+
+.static-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+.static-description {
+    font-size: 12px;
+    color: #666;
+    text-align: right;
+}
+
+/* Gallrey section */
+.gallery-section {
+    padding: 60px 0;
+    background-color: #f5f5f5;
+  }
+  
+  .section-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .section-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+  
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .gallery-item {
+    width: calc(33.33% - 20px);
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .gallery-item-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .gallery-item-description {
+    font-size: 16px;
+    color: #666;
+  }
+  /* Contact Section */
+.contact-section {
+    padding: 60px 0;
+    background-color: #f5f5f5;
+  }
+  
+  .section-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .section-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+  
+  .contact-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .sales-number,
+  .email-address {
+    text-align: center;
+  }
+  
+  .sales-number h3,
+  .email-address h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .sales-number p,
+  .email-address p {
+    font-size: 16px;
+  }
+  .sales-number-link {
+    color: #007bff;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .sales-number-link:hover {
+    color: #0056b3;
+  }
+  
+  /* Footer Section */
+  .footer-section {
+    padding: 30px 0;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .footer-logo h2 {
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  .social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .social-icon {
+    color: #fff;
+    font-size: 20px;
+  }
+  
+  .copyright {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+  }
+
+  
+
+/* For mobiles max width 900px */
+@media screen and (max-width: 900px) {
+
+    :root{
+            /* fonts size  */
+    --font-size-s : 0.9rem;
+    --font-size-n : 1rem;
+    --font-size-m : 1rem;
+    --font-size-l : 1.2rem;
+    --font-size-xl : 1.5rem;
+    --font-size-xxl : 1.8rem;
+    }
+    img{
+        width: 80%;
+    }
+    body.show-mobile-menu header::before{
+        content: "";
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        backdrop-filter: blur(5px);
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+    .navbar :where(#menu-close-button , #menu-open-button){
+        display: block;
+        font-size: var(--font-size-l);
+    }
+    .navbar #menu-close-button{
+        position: absolute;
+        right: 30px;
+        top: 30px;
+    }
+    .navbar #menu-open-button{
+        color: white;
+    }
+    .navbar .nav-menu{
+        display: block;
+        position: fixed;
+        left: -300px;
+        top:0;
+        width: 300px;
+        height:100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 100px;
+        background: var(--gray);
+        left: 0.2s ease;
+
+    }
+
+    body.show-mobile-menu .navbar .nav-menu{
+        left: 0;
+    }
+    .navbar .nav-menu .nav-link{
+        color: black;
+        display: block;
+        margin-top: 17px;
+        font-size: var(--font-size-s ); 
+    }
+
+    .hero-section .section-content{
+        gap: 50px;
+        text-align: center;
+        padding: 30px 20px 20px;
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+    .hero-section .section-details :is(.subtitle,.description){
+        max-width: 80%;
+    }
+    .hero-section .section-details .buttons{
+        justify-content: center;
+    }
+    .hero-section .hero-image-wrapper{
+        max-width: 400px;
+        margin-right: 200;
+    }
+    .static {
+        width: calc(50% - 20px);
+      }
+      .section-details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .static-description {
+        text-align: right;
+      }
+      .gallery-item {
+        width: calc(50% - 20px);
+      }
+      .contact-section {
+        padding: 60px 40px;
+      }
+    
+      .contact-details {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    
+      .sales-number,
+      .email-address {
+        margin-bottom: 0;
+      }
+    
+      .sales-number-link,
+      .email-address p {
+        font-size: 20px;
+      }
+    
+      .footer-section {
+        padding: 40px;
+      }
+    
+      .footer-logo h2 {
+        font-size: 32px;
+      }
+    
+      .social-icon {
+        font-size: 24px;
+      }
+    
+      .copyright p {
+        font-size: 16px;
+      }
+      
+}
+
+/* Media queries for iPhones */
+@media (max-width: 768px) {
+    img{
+        width: 100%;
+        padding: 18% 0%;
+        align-items: center;
+    }
+    .static {
+      width: 100%;
+    }
+    .section-details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .static-description {
+        text-align: right;
+      }
+      .gallery-item {
+        width: 100%;
+      }
+      .contact-section {
+        padding: 40px 20px;
+        background-color: #f5f5f5;
+      }
+      
+      .contact-details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .sales-number,
+      .email-address {
+        margin-bottom: 20px;
+      }
+      
+      .sales-number-link,
+      .email-address p {
+        font-size: 18px;
+      }
+      
+      /* Footer Section */
+      .footer-section {
+        padding: 20px;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+      }
+      
+      .footer-logo h2 {
+        font-size: 24px;
+      }
+      
+      .social-media {
+        margin-top: 10px;
+      }
+      
+      .social-icon {
+        font-size: 20px;
+        margin-right: 10px;
+        color: #fff;
+      }
+      
+      .copyright p {
+        font-size: 14px;
+      }
+  }
