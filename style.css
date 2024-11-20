@@ -1,5 +1,6 @@
 /* importing google fonts */
-@import url("http://www.fontstatic.com/f=bahij");
+/* @import url("http://www.fontstatic.com/f=bahij"); */
+@font-face{font-family:'bahij';src: url('https://www.fontstatic.com/fonts/bahij/bahij.eot?#iefix');src: local('بهيج'), local('bahij'),url('https://www.fontstatic.com/fonts/bahij/bahij.woff') format('woff');}
 * {
     margin: 0;
     padding: 0;
